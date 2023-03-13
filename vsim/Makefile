@@ -33,7 +33,7 @@ wave: ${RUN_DIR}
 	make wave TESTCASE=${TESTCASE} SIM_TOOL=${SIM} RUN_DIR=${RUN_DIR} -C ${RUN_DIR}
 
 run_test: compile
-	make run DUMPWAVE=${DUMPWAVE} TESTCASE=${TESTCASE} SIM_TOOL=${SIM} RUN_DIR=${RUN_DIR} -C ${RUN_DIR}
+	make run DUMPWAVE=${DUMPWAVE} TESTCASE=${TESTCASE} SIM_TOOL=${SIM} RUN_DIR=${RUN_DIR} -C ${RUN_DIR} SHELL=/bin/bash
 
 SELF_TESTS := $(patsubst %.dump,%,$(wildcard ${RUN_DIR}/../../riscv-tools/riscv-tests/isa/generated/rv32uc-p*.dump))
 ifeq ($(core_name),${E203})
